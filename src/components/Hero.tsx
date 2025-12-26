@@ -1,9 +1,10 @@
 import React from 'react'
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <div>
-        <section className='w-full bg-[#96C0FF] h-[500px] relative overflow-hidden  '>
+        <section className='w-full bg-blue-200  h-[500px] relative overflow-hidden  '>
             <div className='mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-black'>
 
               <div>
@@ -24,10 +25,43 @@ export default function Hero() {
           </div>
          
          {/* image part */}
-         <div>
-          
+         <div className='relative flex justify-center'>
+           <Image alt='student learning'
+           src={"/student.png"}
+           width={400}
+           height={400}
+           className='relative z-10' />
+         
+
+         {/* decorative circle */}
+         <div className='absolute '>
+                  <Image alt='decorative circle'
+           src={"/hero.png"}
+           width={600}
+           height={500}
+           className='mt-30'
+            /> 
          </div>
+
+         <div className="w-[545px] mx-auto bg-white shadow-md px-8 py-1 mt-75 absolute z-20 justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center text-center">
+          <div className='text-left'>
+            <p className="font-bold text-sm">100+</p>
+            <p className="text-gray-500 text-sm">Online Courses</p>
           </div>
+          <div className='text-left'>
+            <p className="font-bold text-sm">50k+</p>
+            <p className="text-gray-500 text-sm">Active Students</p>
+          </div>
+          <div className='text-left'>
+            <p className="font-bold text-sm">Lifetime</p>
+            <p className="text-gray-500 text-sm">Access</p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
         </section>
     </div>
   )
