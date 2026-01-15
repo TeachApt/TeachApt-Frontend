@@ -27,7 +27,7 @@ export default function ServicePage() {
       <div>
         
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pr-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 px-8 gap-8 pr-8">
             <FeaturedCard 
               icon='/teach.png'
               title="Teach better"

@@ -8,7 +8,7 @@ export default function StepCard({icon, title, description}: StepCardProps){
     return (
         <div className="flex gap-4 items-start">
             <div className="bg-blue-500 p-3 rounded-lg">    
-                <img src={icon} alt={title} className="w-6 h-6" />
+                <img src={icon} alt={title} className="w-6 h-6 max-w-sm" />
             </div>
 
     <div>
