@@ -17,7 +17,7 @@ const features = [
 ]
 export default function FeaturePage() {
   return (
-    <section className='bg-blue-200 p-16'>
+    <section className=' max-w-full bg-blue-200 p-6 md:p-16'>
       <div className='max-w-xl mb-8 text-black'>
         <h2 className='text-2xl font-bold'>Features that set{" "} <span className='text-blue-600'>TeachApt</span> apart</h2>
 

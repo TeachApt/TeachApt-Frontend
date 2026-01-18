@@ -23,17 +23,17 @@ const Educator = [
 ]
 export default function EducatorSection() {
     return (
-        <section className='p-20 max-w-full bg-white'>
+        <section className='p-6 md:p-16 max-w-full bg-white'>
 
-            <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4'>
+            <div className='flex flex-col md:flex-row mb-4 gap-20'>
                 <div>
                    <h2 className='text-3xl font-bold text-start text-blue-600'>Meet Our Expert Educators</h2>
                     <p className='text-black'>Instructors guiding your academic and career success. </p>
                 </div>
 
-                <div className='flex gap-3'>
-                    <button className='bg-white text-black px-4 py-2 rounded hover:bg-blue-700 outline  outline-blue-600 text-sm'>Filter</button>
-                    <button className='bg-white text-black px-4 py-2 rounded hover:bg-blue-700 outline  outline-blue-600 text-sm'>View All Teachers</button>
+                <div className='flex gap-4'>
+                    <button className='bg-white text-black px-4 py-1 rounded rounded-2xl hover:bg-blue-700 outline shadow-md outline-blue-600 text-sm'>Filter</button>
+                    <button className='bg-white text-black px-4 py-1 rounded rounded-2xl hover:bg-blue-700 outline shadow-md outline-blue-600 text-sm'>View All Teachers</button>
               </div>
             </div>
 

@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div>
-      <section className='w-full h-full p-10 bg-blue-200 relative overflow-hidden '>
-        <div className='mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-black '>
+      <section className='max-w-full h-full p-4 md:p-16 bg-blue-200 relative overflow-hidden '>
+        <div className='mx-auto py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-black '>
 
           <div className='flex flex-col items-center text-center md:items-start md:text-left md:justify-start mb-8'>
             <h2 className='text-4xl md:text-5xl font-bold leading-tight'> Let <span className="text-blue-600">TeachAPT</span> Tutors Unlock

@@ -10,7 +10,7 @@ type EducatorCardProps = {
 
 export default function EducatorCard({ TeacherName, coverImage, discipline, Experience }: EducatorCardProps) {
   return (
-    <div className='bg-white flex flex-col items-center text-center hover:shadow-lg transition-shadow text-white relative'>
+    <div className='max-w-fullbg-white flex flex-col items-center text-center hover:shadow-lg transition-shadow text-white relative'>
               <Image
                 src={coverImage}
                 alt={TeacherName}

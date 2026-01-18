@@ -54,7 +54,7 @@ const courses = [
 ]
 export default function ExploreCourses() {
   return (
-    <section className='p-16 bg-white'>
+    <section className='p-6 md:p-16 bg-white'>
       <div className='max-w-full '>
         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 text-blue-600">
           <h2 className='text-3xl font-bold mb-4 text-blue-600'>Explore Our Courses</h2>
