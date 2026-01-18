@@ -1,3 +1,4 @@
+import EducatorSection from "../components/Educators/EducatorSection";
 import ExploreCourses from "../components/Explore/ExploreCourses";
 import FeaturePage from "../components/Feature/FeaturePage";
 import Hero from "../components/Hero";
@@ -13,6 +14,7 @@ export default function Home() {
         <ServicePage />
         <FeaturePage />
         <ExploreCourses />
+        <EducatorSection />
       </main>
   
   );
