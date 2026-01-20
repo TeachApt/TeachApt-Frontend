@@ -4,7 +4,7 @@ import StepCard from './StepCard'
 
 export default function HowItWorks() {
     return (
-        <section className="pb-10 w-full ">
+        <section className="pb-10 max-w-full ">
             <div className='mx-auto px-8 text-black'>
                 <h2 className='text-3xl font-bold mb-2'>How It Works</h2>
                 <p className=' mb-10'>Get started with TeachApt in just few simple steps</p>
