@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div>
-      <section className='max-w-full h-full p-4 md:p-16 bg-blue-200 relative overflow-hidden '>
+      <section className='max-w-full h-full p-4 md:p-16 bg-blue-200 relative  '>
         <div className='mx-auto py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-black '>
 
           <div className='flex flex-col items-center text-center md:items-start md:text-left md:justify-start mb-8'>
@@ -52,7 +52,7 @@ export default function Hero() {
               />
             </div>
 
-            <div className="w-[585px] absolute w-full mx-auto bg-white shadow-md px-8 py-2 mt-60 md:mt-75 absolute z-20 justify-center items-center">
+            <div className="w-[585px] absolute w-full mx-auto bg-white shadow-md px-8 py-2 mt-45 md:mt-75 absolute z-20 justify-center items-center">
               <div className="grid grid-cols-3 gap-2 md:gap-6 justify-center text-center">
                 <div className='text-left'>
                   <p className="font-bold text-sm">100+</p>
