@@ -50,16 +50,11 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(2);
   const total = testimonials.length;
 
-  // Infinite looping helpers
   const nextSlide = () => {
     setActiveIndex((prev) => (prev + 1) % total);
   };
 
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + total) % total);
-  };
-
-   /* ----- Avatar Size Logic ----- */
+  /* ----- Avatar Size Logic (Responsive) ----- */
   const getAvatarSize = (index: number) => {
     const diff = Math.abs(index - activeIndex);
     const circularDiff = Math.min(diff, total - diff);
@@ -70,16 +65,13 @@ export default function Testimonials() {
   };
 
   const sizeClasses = {
-    sm: "w-20 h-20",
-    md: "w-30 h-30",
-    lg: "w-40 h-40",
+    sm: "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16",
+    md: "w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20",
+    lg: "w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32",
   };
-  // Optional autoplay (can remove if you don't want it)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
 
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -91,12 +83,12 @@ export default function Testimonials() {
         <h2 className="text-2xl font-bold text-blue-600 mb-2">
           Hear From Our Happy Learners
         </h2>
-        <p className="text-gray-600 mb-14">
+        <p className="text-gray-600 mb-12">
           Thousands trust TeachAPT for personalized and flexible learning
         </p>
 
         {/* Testimonial Card */}
-        <div className="relative bg-blue-600 text-white rounded-xl px-8 py-8 max-w-2xl mx-auto mb-24">
+        <div className="relative bg-blue-600 text-white rounded-xl px-6 sm:px-8 py-8 max-w-2xl mx-auto mb-20">
           <h3 className="font-semibold text-lg">
             {testimonials[activeIndex].name}
           </h3>
@@ -112,22 +104,21 @@ export default function Testimonials() {
             {testimonials[activeIndex].text}
           </p>
 
-          {/* Stars */}
           <div className="flex justify-center gap-1 mt-4 text-yellow-300">
             ★ ★ ★ ★ ★
           </div>
 
-          {/* Speech bubble arrow */}
+          {/* Speech arrow */}
           <div
             className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-0 h-0
-            border-l-[20px] border-l-transparent
-            border-r-[20px] border-r-transparent
-            border-t-[20px] border-t-blue-600"
+            border-l-[16px] border-l-transparent
+            border-r-[16px] border-r-transparent
+            border-t-[16px] border-t-blue-600"
           />
         </div>
 
         {/* Avatars */}
-        <div className="flex justify-center items-end gap-20 mb-10">
+        <div className="flex justify-center items-end gap-4 sm:gap-6 md:gap-10 mb-10">
           {testimonials.map((item, index) => {
             const size = getAvatarSize(index);
             const isActive = index === activeIndex;
@@ -136,18 +127,16 @@ export default function Testimonials() {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`rounded-full transition-all duration-300 
-                   ${sizeClasses[size]}
-                    ${ isActive
-                    ? "w-24 h-24 ring-4 ring-blue-600"
-                    : "w-14 h-14 ring-2 ring-blue-300 opacity-70"
-                }`}
+                className={`rounded-full transition-all duration-300 flex items-center justify-center
+                  ${sizeClasses[size]}
+                  ${isActive ? "ring-4 ring-blue-600" : "ring-2 ring-blue-300 opacity-70"}
+                `}
               >
                 <Image
                   src={item.image}
                   alt={item.name}
-                  width={120}
-                  height={100}
+                  width={128}
+                  height={128}
                   className="w-full h-full object-cover rounded-full"
                 />
               </button>
@@ -156,35 +145,17 @@ export default function Testimonials() {
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center gap-3 mb-8">
+        <div className="flex justify-center gap-3">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`w-3 h-3 rounded-full ${
-                index === activeIndex
-                  ? "bg-blue-600"
-                  : "bg-blue-200"
+                index === activeIndex ? "bg-blue-600" : "bg-blue-200"
               }`}
             />
           ))}
         </div>
-
-        {/* Controls */}
-        {/* <div className="flex justify-center gap-6">
-          <button
-            onClick={prevSlide}
-            className="px-4 py-2 rounded-md border text-sm"
-          >
-            ← Prev
-          </button>
-          <button
-            onClick={nextSlide}
-            className="px-4 py-2 rounded-md border text-sm"
-          >
-            Next →
-          </button>
-        </div> */}
 
       </div>
     </section>

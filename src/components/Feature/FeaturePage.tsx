@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from "next/image";
 
 const features = [
@@ -14,50 +13,59 @@ const features = [
   {
     text: "Unlock interactive tools that make every lesson simple, enjoyable, and easy to follow.",
   },
-]
+];
+
 export default function FeaturePage() {
   return (
-    <section className=' max-w-full bg-blue-200 p-6 md:p-16'>
-      <div className='max-w-xl mb-8 text-black'>
-        <h2 className='text-2xl font-bold'>Features that set{" "} <span className='text-blue-600'>TeachApt</span> apart</h2>
+    <section className="w-full bg-blue-200 py-16">
+      <div className="max-w-7xl mx-auto px-6">
 
-        <p>
-          We empower seamless learning by connecting students with the right tutors in both skills and academic subjects.
-        </p>
-      </div>
+        {/* Heading */}
+        <div className="max-w-xl mb-12 text-black">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            Features that set{" "}
+            <span className="text-blue-600">TeachApt</span> apart
+          </h2>
 
-      {/* content */}
-      <div className='grid grid-cols-1 md:grid-cols-2  gap-16 justify-between items-start'>
-
-      {/* left */}
-        <div className='rounded-lg overflow-hidden w-[600] h-[480px] shadow-lg'>
-          <Image
-            src="/teacher&stud.png"
-            alt="teacher and student learning"
-            width={600}
-            height={480}
-            className="object-cover w-full h-full"
-          />
+          <p className="text-sm md:text-base">
+            We empower seamless learning by connecting students with the right tutors in both skills and academic subjects.
+          </p>
         </div>
-     
 
-    {/* right content */}
-    <div className='relative space-y-7'>
-      {features.map((feature, index)=> (
-        <div key={index}
-        className="bg-white rounded-lg shadow-lg px-6 py-6 max-w-lg text-black"
-        style={{
-          marginLeft: index % 2 === 0 ? "0px" : "80px"
-        }}
-        >
-         <p className='text-sm leading-relaxed'>{feature.text}</p>
+        {/* Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start md:items-center md:justify-center">
+
+          {/* Left Image */}
+          <div className="flex justify-center md:justify-start">
+            <div className="rounded-lg overflow-hidden shadow-lg w-full max-w-md md:max-w-[600px]">
+              <Image
+                src="/teacher&stud.png"
+                alt="teacher and student learning"
+                width={600}
+                height={480}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Right Features */}
+          <div className="relative space-y-6 ">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`bg-white rounded-lg shadow-lg px-6 py-6 max-w-lg text-black
+                  ${index % 2 !== 0 ? "md:ml-20" : ""}
+                `}
+              >
+                <p className="text-sm leading-relaxed">
+                  {feature.text}
+                </p>
+              </div>
+            ))}
+          </div>
 
         </div>
-      ))}
-
-    </div>
       </div>
     </section>
-
-  )
+  );
 }

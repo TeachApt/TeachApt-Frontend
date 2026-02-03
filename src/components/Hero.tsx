@@ -52,8 +52,8 @@ export default function Hero() {
               />
             </div>
 
-            <div className="w-[585px] mx-auto bg-white shadow-md px-8 py-1 mt-60 md:mt-80 absolute z-20 justify-center items-center">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center text-center">
+            <div className="w-[585px] absolute w-full mx-auto bg-white shadow-md px-8 py-2 mt-60 md:mt-75 absolute z-20 justify-center items-center">
+              <div className="grid grid-cols-3 gap-2 md:gap-6 justify-center text-center">
                 <div className='text-left'>
                   <p className="font-bold text-sm">100+</p>
                   <p className="text-gray-500 text-sm">Online Courses</p>
