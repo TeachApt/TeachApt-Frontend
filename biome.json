@@ -6,7 +6,15 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": [".next/**", "node_modules/**", "out/**", "build/**", "*.config.js", "*.config.mjs", "*.config.ts"]
+    "ignore": [
+      ".next/**",
+      "node_modules/**",
+      "out/**",
+      "build/**",
+      "*.config.js",
+      "*.config.mjs",
+      "*.config.ts"
+    ]
   },
   "formatter": {
     "enabled": true,
