@@ -8,20 +8,18 @@ import Partners from "../components/Partner/Partners";
 import ServicePage from "../components/Services/ServicePage";
 import TestimonialSection from "../components/Testimonials/TestimonialSection";
 
-
 export default function Home() {
   return (
-      <main>
-        <Navbar />
-        <Hero />
-        <ServicePage />
-        <FeaturePage />
-        <ExploreCourses />
-        <EducatorSection />
-        <TestimonialSection />
-        <Partners />
-        <Footer />
-      </main>
-  
+    <main>
+      <Navbar />
+      <Hero />
+      <ServicePage />
+      <FeaturePage />
+      <ExploreCourses />
+      <EducatorSection />
+      <TestimonialSection />
+      <Partners />
+      <Footer />
+    </main>
   );
 }
