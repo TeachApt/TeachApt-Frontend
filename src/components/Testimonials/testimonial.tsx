@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function testimonial() {
-  return (
-    <div>testimonial</div>
-  )
+  return <div>testimonial</div>;
 }

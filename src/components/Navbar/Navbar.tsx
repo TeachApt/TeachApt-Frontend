@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,6 @@ export default function Navbar() {
       {/* HEADER */}
       <header className="w-full bg-white relative z-50">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          
           {/* Logo */}
           <Image src="/Logo.png" alt="Logo" width={150} height={40} />
 
@@ -28,6 +27,7 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             className="md:hidden text-3xl"
             aria-label="Open menu"
+            type="button"
           >
             ☰
           </button>
@@ -38,6 +38,13 @@ export default function Navbar() {
       {open && (
         <div
           onClick={() => setOpen(false)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape" || e.key === "Enter") {
+              setOpen(false);
+            }
+          }}
+          role="button"
+          tabIndex={0}
           className="fixed inset-0 bg-black/50 z-40"
         />
       )}
@@ -50,6 +57,7 @@ export default function Navbar() {
         {/* Close Button */}
         <div className="flex justify-end p-4">
           <button
+            type="button"
             onClick={() => setOpen(false)}
             className="text-2xl"
             aria-label="Close menu"
@@ -60,9 +68,15 @@ export default function Navbar() {
 
         {/* Mobile Nav Links */}
         <nav className="flex flex-col gap-6 px-6 text-lg font-medium text-black">
-          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/" onClick={() => setOpen(false)}>About</Link>
-          <Link href="/" onClick={() => setOpen(false)}>Contact</Link>
+          <Link href="/" onClick={() => setOpen(false)}>
+            Home
+          </Link>
+          <Link href="/" onClick={() => setOpen(false)}>
+            About
+          </Link>
+          <Link href="/" onClick={() => setOpen(false)}>
+            Contact
+          </Link>
         </nav>
       </aside>
     </>
