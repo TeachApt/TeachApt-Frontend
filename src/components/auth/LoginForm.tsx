@@ -9,8 +9,9 @@ export default function LoginForm() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await fetch("https://teachapt-backend-production.up.railway.app/auth/token", {
-      method: "POST",
+    await fetch("/api/auth/login", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
   };
